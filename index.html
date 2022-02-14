@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Toy Tale</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="menu-header">
+      <img
+        <!-- src="https://fontmeme.com/permalink/180719/67429e6afec53d21d64643101c43f029.png"
+        alt="toy-header" -->
+      />
+    </div>
+
+    <div class="container">
+      <form class="add-recipe-form">
+        <h3>Create a new plate!</h3>
+
+        <input
+        id="newName"
+          type="text"
+          name="name"
+          value=""
+          placeholder="Enter the meal's name..."
+          class="input-text"
+        />
+        <br />
+        <input
+        id="newImage"
+          type="text"
+          name="image"
+          value=""
+          placeholder="Enter the plate's image URL..."
+          class="input-text"
+        />
+        <br />
+        <input
+          type="submit"
+          name="submit"
+          value="Create plate"
+          class="submit"
+        />
+      </form>
+    </div>
+    <p style="text-align:center">
+      Andy needs your help! <button id="new-meal-btn">Add a new toy!</button>
+    </p>
+
+    <div id="toy-collection"></div>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
