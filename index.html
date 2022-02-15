@@ -1,53 +1,33 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <title>Toy Tale</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="menu-header">
-      <img
-        <!-- src="https://fontmeme.com/permalink/180719/67429e6afec53d21d64643101c43f029.png"
-        alt="toy-header" -->
-      />
+<html>
+<head>
+  <meta charset='UTF-8'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'/>
+  <title>Document</title>
+  <script src='index.js'></script>
+  <link rel='stylesheet' href='style.css'/>
+</head>
+<body>
+  <div id='main'>
+
+    <h2>GitHub Search</h2>
+
+    <form id='github-form'>
+      <input id='search' type='text' name='search'>
+      <input type='submit' name='submit'/>
+    </form>
+
+    <div id='github-container'>
+      <ul id='user-list'>
+
+      </ul>
+
+      <ul id='repos-list'>
+
+      </ul>
     </div>
 
-    <div class="container">
-      <form class="add-recipe-form">
-        <h3>Create a new plate!</h3>
+  </div>
 
-        <input
-        id="newName"
-          type="text"
-          name="name"
-          value=""
-          placeholder="Enter the meal's name..."
-          class="input-text"
-        />
-        <br />
-        <input
-        id="newImage"
-          type="text"
-          name="image"
-          value=""
-          placeholder="Enter the plate's image URL..."
-          class="input-text"
-        />
-        <br />
-        <input
-          type="submit"
-          name="submit"
-          value="Create plate"
-          class="submit"
-        />
-      </form>
-    </div>
-    <p style="text-align:center">
-      Andy needs your help! <button id="new-meal-btn">Add a new toy!</button>
-    </p>
-
-    <div id="toy-collection"></div>
-    <script type="text/javascript" src="script.js"></script>
-  </body>
+</body>
 </html>
