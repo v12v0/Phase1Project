@@ -1,4 +1,4 @@
-# Phase1Project
+# Phase 1 Project
 
 **core deliverables**
 1. User will be able to view a menu of plates 
