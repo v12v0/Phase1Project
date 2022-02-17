@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "tasty.p.rapidapi.com",
-            "x-rapidapi-key": "b04d2d79bcmsh34480f1ae77be72p126f57jsn51cc4c556b3a"
+            "x-rapidapi-key": "38dc01694amshcd2ebebb6a79959p10f60djsneb6d515a158a"
         }
     })
         .then((resp) => resp.json())
@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
             counter += 1
             const cardDiv = document.createElement("div")
             cardDiv.setAttribute("class", "card")
-            
             //creating img tag and adding rendering image
             const plateImg = document.createElement("img")
             plateImg.setAttribute("class", "placeholder-for-image")
@@ -44,26 +43,24 @@ document.addEventListener('DOMContentLoaded', () => {
             const expandMoreContent = document.createElement("div")
             expandMoreContent.className = "expandMoreContent";
             expandMoreContent.setAttribute("id", `showMoreContent${counter}`)
-            const ingredients = document.createElement("p")
-             //plate.original_video_url
-            let instructions = plate.instructions
-            console.log(instructions)
-            let form = document.createElement('form')
-            cardDiv.append(form)
-
-            let pageTitle = document.querySelector('#tiptop')
-            pageTitle.addEventListener('click', () => {
-                pageTitle.innerHTML = "KOOC KCIUQ"
-                pageTitle.addEventListener('click', () => {
-                    pageTitle.innerHTML = "quick cook"
-                })
-            })
-
-            instructions.forEach(element => {
-                let displayText = element.display_text
-                ingredients.innerHTML = displayText
-                console.log(displayText)
-            })
+            const form = document.createElement("form")
+            form.setAttribute("id", "create-review-form")
+            form.setAttribute("method", "POST")
+            const label = document.createElement("label")
+            label.setAttribute("for", "newReviewDescription")
+            label.innerText = "Review:"
+            const input1 = document.createElement("input")
+            input1.setAttribute("type", "text")
+            input1.setAttribute("id", "newReviewDescription")
+            input1.setAttribute("name", "newReviewDescription")
+            input1.setAttribute("placeholder", "description")
+            const input2 = document.createElement("input")
+            input2.setAttribute("type", "submit")
+            input2.setAttribute("value", "Add new reiview ")
+            const listDiv = document.createElement("div")
+            listDiv.setAttribute("id", "list")
+            const ul = document.createElement("ul")
+            ul.setAttribute("id", "tasks")
             // expand more button
             const expandMoreHolder = document.createElement("div")
             expandMoreHolder.setAttribute("class", "expandMoreHolder")
@@ -77,7 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
             //appending elements on to the page
             expandMoreHolder.appendChild(span)
             plateNameDiv.appendChild(plateH2)
-            expandMoreContent.appendChild(ingredients)
+            form.append(label, input1, input2)
+            expandMoreContent.append(form, listDiv)
+            listDiv.append(ul)
             description.append(expandMoreContent, expandMoreHolder) // expandMoreHolder
             cardDiv.append(plateImg, plateNameDiv, description)
             container.appendChild(cardDiv)
@@ -87,5 +86,29 @@ document.addEventListener('DOMContentLoaded', () => {
         expandsMore.forEach(expandsMore => {
             expandsMore.addEventListener('click', expand)
         })
-    }
-})
+        //waits for the elements to load on to the page then grabs the form to run the call back function
+        const reviewForm = document.querySelectorAll("#create-review-form")
+        reviewForm.forEach(reviewForm => {
+            reviewForm.addEventListener("submit", (e) => {
+                e.preventDefault()
+                handleReview(e.target.newReviewDescription.value)
+                reviewForm.reset()
+            })
+        })
+        function handleReview(review) {
+            //create a p element
+            let p = document.createElement("p")
+            p.textContent = `${review} `
+            // create the 'done' button and add function
+            //add to todo list 
+            document.querySelector("#list").appendChild(p)
+        }
+    } //dont remove
+}) //dont remove
+
+
+
+
+
+
+
