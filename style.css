@@ -1,22 +1,75 @@
-body {
-  background-image: linear-gradient(to right, grey, rgb(187, 101, 101));
+.expandMoreContent {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
 }
-#main {
+.recipeContainer{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+body {
+  background-color: rgb(212, 95, 118);
+}
+.card:hover {
+  background-color: azure;
+  color: crimson;
 }
 
-#recipe-container {
-
-  display: inline-flex;
-}
-
-ul {
-  list-style: none;
-}
-img {
+.card {
+  border-radius: 25px;
   display: flexbox;
-  width: 15%;
+  width: 300px;
+  margin: 10px;
+  background-color: rgb(49, 49, 49);
+  font-family: Arial, Helvetica, sans-serif;
+  border: solid 1px;
+  box-shadow: 0 2p 2px 0 rbga(0,0,0,0.1);
+  color: white;
+  text-align: center;
+}
+
+.placeholder-for-image{
+  border-radius: 25px;
+  
+  width: 300px;
+  height: 250px;
+  background-color: red;
+}
+.expandMoreContent{
+  height: 20px;
+  overflow: hidden;
+  transition: height 0.5 ease-in-out;
+  position: relative;
+}
+.expandMoreContent.expand-active{
   height: auto;
+  transition: height 0.5s ease-in-out;
+  display: contents;
+}
+.expandMoreHolder{
+  padding: 30px 0;
+  text-align: center;
+}
+.btn-expand-more{
+  cursor: pointer;
+  border: 5px solid rgba(8, 8, 8, 0.2);
+  display: inline-block;
+  padding: 10px;
+  border-radius: 15px;
+
+}
+
+p {
+  display: flex;
+}
+#tiptop {
+
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 100px;
+}
+#tiptop:hover {
+  color: azure;
 }
